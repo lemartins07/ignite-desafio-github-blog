@@ -1,8 +1,11 @@
+import { UserProvider } from './contexts/UserContext'
+import { Home } from './pages/Home'
+
 function App() {
   return (
-    <>
-      <h1>Github blog</h1>
-    </>
+    <UserProvider>
+      <Home />
+    </UserProvider>
   )
 }
 
