@@ -13,6 +13,7 @@ export const LinkAnchor = styled.a`
   padding-bottom: 4px;
   border-bottom: 1px solid transparent;
   text-decoration: none;
+  margin-bottom: 0.5rem;
 
   cursor: pointer;
 

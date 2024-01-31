@@ -15,5 +15,6 @@ export const GlobalStyle = createGlobalStyle`
 
   body, input, textarea, button {
     font: 400 ${(props) => props.theme['font-normal']} Nunito, sans-serif;
+    line-height: 1.6;
   }
 `
