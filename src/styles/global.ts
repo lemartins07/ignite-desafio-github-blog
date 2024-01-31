@@ -8,6 +8,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: #071422;
+    background-color: ${(props) => props.theme['base-background']};
+    color: ${(props) => props.theme['base-text']};
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body, input, textarea, button {
+    font: 400 ${(props) => props.theme['font-normal']} Nunito, sans-serif;
   }
 `

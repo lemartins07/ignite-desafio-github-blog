@@ -8,7 +8,8 @@ export const defaultTheme = {
   'base-border': '#1C2F41',
   'base-label': '#3A536B',
   'base-span': '#7B96B2',
-  'base-subtitle': '#AFC2D4',
+  'base-subtitle': '#C4D4E3',
+  'base-text': '#AFC2D4',
   'base-title': '#E7EDF4',
 
   blue: '#3294F8',
