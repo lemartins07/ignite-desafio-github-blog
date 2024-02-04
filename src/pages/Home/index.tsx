@@ -1,10 +1,11 @@
 import { Card } from '../../components/Card'
 import { Header } from '../../components/Header'
 import { Link } from '../../components/Link'
+import { HomeContainer } from './styles'
 
 export function Home() {
   return (
-    <div style={{ padding: '1rem' }}>
+    <HomeContainer>
       <Header />
       <h1>Home</h1>
       <Link url="google.com">Componente Link</Link>
@@ -20,6 +21,6 @@ export function Home() {
         foo = true; // foo is now a boolean
         "
       />
-    </div>
+    </HomeContainer>
   )
 }
