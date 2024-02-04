@@ -6,6 +6,11 @@ export const ProfileContainer = styled.div`
   background-color: ${(props) => props.theme['base-profile']};
   padding: 32px;
   padding-left: 40px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 export const Avatar = styled.img`
   max-width: 148px;

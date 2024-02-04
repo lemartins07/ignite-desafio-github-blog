@@ -1,13 +1,15 @@
 import { Header } from '../../components/Header'
 import { Profile } from '../../components/Profile'
 
-import { HomeContainer } from './styles'
+import { HomeContainer, HomeMain } from './styles'
 
 export function Home() {
   return (
     <HomeContainer>
       <Header />
-      <Profile />
+      <HomeMain>
+        <Profile />
+      </HomeMain>
     </HomeContainer>
   )
 }
