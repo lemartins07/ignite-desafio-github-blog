@@ -5,6 +5,7 @@ export const InputContent = styled.input`
   padding: 12px 16px;
   border-radius: 6px;
   border: 1px solid ${(props) => props.theme['base-border']};
+  width: 100%;
 
   color: ${(props) => props.theme['base-text']};
 
