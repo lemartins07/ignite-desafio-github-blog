@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom'
 import { Card } from '../Card'
+
 import { PostListContainer } from './styles'
 
 export function PostList() {
@@ -15,7 +17,9 @@ export function PostList() {
     <PostListContainer>
       {posts &&
         posts.map((post) => (
-          <Card key={post.id} title={post.title} content={post.content} />
+          <Link key={post.id} to={`post/${post.id}`}>
+            <Card title={post.title} content={post.content} />
+          </Link>
         ))}
     </PostListContainer>
   )

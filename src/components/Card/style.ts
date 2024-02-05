@@ -25,6 +25,11 @@ export const CardContainer = styled.div`
     display: block;
     min-width: fit-content;
     font-size: ${(props) => props.theme['font-s']};
+    color: ${(props) => props.theme['base-span']};
+  }
+
+  p {
+    color: ${(props) => props.theme['base-text']};
   }
 
   &:hover {
