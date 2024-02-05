@@ -5,7 +5,7 @@ export const ProfileContainer = styled.div`
   gap: 2rem;
   background-color: ${(props) => props.theme['base-profile']};
   padding: 32px;
-  padding-left: 40px;
+  box-shadow: 0px 10px 6px 6px rgba(0, 0, 0, 0.1);
 
   @media (max-width: 767px) {
     flex-direction: column;

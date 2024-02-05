@@ -1,5 +1,11 @@
 import styled from 'styled-components'
 
+export const LinkContainer = styled.span`
+  & a {
+    text-decoration: none;
+  }
+`
+
 export const LinkAnchor = styled.a`
   display: flex;
   align-items: center;
