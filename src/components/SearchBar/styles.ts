@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const SearchBarContainer = styled.div`
+  margin-bottom: 3rem;
+
   & > div {
     display: flex;
     align-items: center;

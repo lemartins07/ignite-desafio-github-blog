@@ -11,6 +11,7 @@ export const CardContainer = styled.div`
 
   & > div {
     display: flex;
+    justify-content: space-between;
     align-items: baseline;
     margin-bottom: 1.25rem;
   }

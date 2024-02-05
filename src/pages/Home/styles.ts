@@ -5,9 +5,10 @@ export const HomeMain = styled.main`
   max-width: 864px;
   margin: 0 auto;
   padding: 1rem;
+  padding-bottom: 234px;
 
   & > div:first-child {
-    margin-top: -5rem;
+    margin-top: -6rem;
     margin-bottom: 4.5rem;
   }
 `

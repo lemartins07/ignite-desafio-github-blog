@@ -1,4 +1,5 @@
 import { Header } from '../../components/Header'
+import { PostList } from '../../components/PostList'
 import { Profile } from '../../components/Profile'
 import { SearchBar } from '../../components/SearchBar'
 
@@ -11,6 +12,7 @@ export function Home() {
       <HomeMain>
         <Profile />
         <SearchBar />
+        <PostList />
       </HomeMain>
     </HomeContainer>
   )
