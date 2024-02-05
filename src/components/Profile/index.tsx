@@ -11,7 +11,13 @@ export function Profile() {
       <ProfileData>
         <div>
           <strong>Cameron Williamson</strong>
-          <Link url="#">Github</Link>
+          <Link
+            type="external"
+            icon="external"
+            url="https://github.com/lemartins07"
+          >
+            Github
+          </Link>
         </div>
         <p>
           Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
