@@ -7,5 +7,6 @@ export const PostListContainer = styled.div`
 
   & > a {
     text-decoration: none;
+    max-width: fit-content;
   }
 `

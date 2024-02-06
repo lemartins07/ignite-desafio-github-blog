@@ -7,6 +7,7 @@ import { PostsContext } from '../../contexts/PostsProvider'
 
 export function PostList() {
   const { posts } = useContext(PostsContext)
+  console.log(posts)
 
   return (
     <PostListContainer>

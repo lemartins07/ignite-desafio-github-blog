@@ -34,18 +34,15 @@ export const PostsContext = createContext({} as PostsContextType)
 export function PostsProvider({ children }: PostsProviderProps) {
   const [posts, setPosts] = useState<Posts[]>([])
 
-  const fetchPosts = useCallback(async () => {
+  const fetchPosts = useCallback(async (query = '') => {
     try {
-      const response = await api.get('posts')
-      const data = response.data
-
-      /* 
-        {
+      const response = await api.get('search/issues', {
         params: {
-          q: `${query}%20repo:lemartins07/ignite-desafio-github-blog`,
+          q: `${query}repo:lemartins07/ignite-desafio-github-blog`,
         },
-      }
-      */
+      })
+
+      const data = response.data.items
 
       console.log(data)
       setPosts(data)
