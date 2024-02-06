@@ -1,40 +1,38 @@
 import { Avatar, ProfileContainer, ProfileData } from './styles'
 import { FaBuilding, FaGithub } from 'react-icons/fa'
-import avatar from '../../assets/avatar.png'
 import { Link } from '../Link'
 import { FaUserGroup } from 'react-icons/fa6'
+import { useContext } from 'react'
+import { UserContext } from '../../contexts/UserContext'
 
 export function Profile() {
+  const { user } = useContext(UserContext)
   return (
     <ProfileContainer>
-      <Avatar src={avatar} alt="teste" />
+      <Avatar src={user.avatar_url} alt={user.name} />
       <ProfileData>
         <div>
-          <strong>Cameron Williamson</strong>
-          <Link
-            type="external"
-            icon="external"
-            url="https://github.com/lemartins07"
-          >
+          <strong>{user.name}</strong>
+          <Link type="external" icon="external" url={user.html_url}>
             Github
           </Link>
         </div>
-        <p>
-          Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-          viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
-          pulvinar vel mass.
-        </p>
+        <p>{user.bio}</p>
         <ul>
           <li>
-            <FaGithub /> cameronwll
+            <FaGithub /> {user.login}
           </li>
-          <li>
-            <FaBuilding /> Rocketseat
-          </li>
-          <li>
-            <FaUserGroup />
-            32 seguidores
-          </li>
+          {user.company && (
+            <li>
+              <FaBuilding /> {user.company}
+            </li>
+          )}
+          {user.followers && (
+            <li>
+              <FaUserGroup />
+              {user.followers} seguidores
+            </li>
+          )}
         </ul>
       </ProfileData>
     </ProfileContainer>

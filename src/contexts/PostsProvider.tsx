@@ -44,10 +44,7 @@ export function PostsProvider({ children }: PostsProviderProps) {
 
       const data = response.data.items
 
-      console.log(data)
       setPosts(data)
-
-      // q=${query}%20repo:lemartins07/ignite-desafio-github-blog
     } catch (e) {
       console.log(e)
     }
