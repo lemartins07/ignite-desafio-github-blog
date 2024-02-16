@@ -34,8 +34,6 @@ export function UserProvider({ children }: UserProviverProps) {
     const response = await api.get('users/lemartins07')
     const data = response.data
 
-    console.log(data)
-
     setUser(data)
   }, [])
 

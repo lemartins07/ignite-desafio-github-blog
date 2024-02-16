@@ -7,9 +7,9 @@ import {
 } from 'react'
 import { api } from '../lib/axios'
 
-interface Posts {
-  id: string
-  url: string
+interface Post {
+  number: string
+  html_url: string
   comments: number
   created_at: string
   updated_at: string
@@ -25,20 +25,26 @@ interface PostsProviderProps {
 }
 
 interface PostsContextType {
-  posts: Posts[]
+  post: Post
+  posts: Post[]
+  fetchPost: (postNumber: string) => Promise<void>
   fetchPosts: (query?: string) => Promise<void>
 }
+
+const GITHUB_REPO = 'ignite-desafio-github-blog'
+const GITHUB_USER = 'lemartins07'
 
 export const PostsContext = createContext({} as PostsContextType)
 
 export function PostsProvider({ children }: PostsProviderProps) {
-  const [posts, setPosts] = useState<Posts[]>([])
+  const [posts, setPosts] = useState<Post[]>([])
+  const [post, setPost] = useState<Post>({} as Post)
 
   const fetchPosts = useCallback(async (query = '') => {
     try {
       const response = await api.get('search/issues', {
         params: {
-          q: `${query}repo:lemartins07/ignite-desafio-github-blog`,
+          q: `${query}repo:${GITHUB_USER}/${GITHUB_REPO}`,
         },
       })
 
@@ -46,7 +52,22 @@ export function PostsProvider({ children }: PostsProviderProps) {
 
       setPosts(data)
     } catch (e) {
-      console.log(e)
+      console.error(e)
+    }
+  }, [])
+
+  const fetchPost = useCallback(async (postNumber: string) => {
+    try {
+      // https://api.github.com/repos/rocketseat-education/reactjs-github-blog-challenge/issues/1
+
+      const response = await api.get(
+        `repos/${GITHUB_USER}/${GITHUB_REPO}/issues/${postNumber}`,
+      )
+
+      const data = response.data
+      setPost(data)
+    } catch (e) {
+      console.error(e)
     }
   }, [])
 
@@ -55,7 +76,7 @@ export function PostsProvider({ children }: PostsProviderProps) {
   }, [fetchPosts])
 
   return (
-    <PostsContext.Provider value={{ posts, fetchPosts }}>
+    <PostsContext.Provider value={{ posts, fetchPosts, fetchPost, post }}>
       {children}
     </PostsContext.Provider>
   )

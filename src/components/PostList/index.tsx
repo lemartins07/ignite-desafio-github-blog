@@ -7,13 +7,11 @@ import { PostsContext } from '../../contexts/PostsProvider'
 
 export function PostList() {
   const { posts } = useContext(PostsContext)
-  console.log(posts)
-
   return (
     <PostListContainer>
       {posts &&
         posts.map((post) => (
-          <Link key={post.id} to={`post/${post.id}`}>
+          <Link key={post.number} to={`post/${post.number}`}>
             <Card title={post.title} content={post.body} />
           </Link>
         ))}
