@@ -1,30 +1,46 @@
-# React + TypeScript + Vite
+<h1 align="center">
+  Ignite Github Blog
+</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;    
+  <a href="#-demo">Demo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;    
+  <a href="#memo-licença">Licença</a>
+</p>
 
-Currently, two official plugins are available:
+<br>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p align="center">
+  <img alt="github blog" src="./src/assets/preview.png" width="100%">
+</p>
 
-## Expanding the ESLint configuration
+## 💻 Projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+O Ignite Github Blog é uma aplicação que utiliza a API do GitHub para criar um blog. Esta aplicação apresenta as seguintes funcionalidades:
 
-- Configure the top-level `parserOptions` property like this:
+- Página principal: exibe as informações do usuário e uma lista de issues, simulando posts de blog.
+- Página de detalhes do post: mostra todo o conteúdo do post.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Este projeto foi proposto como desafio no módulo "Consumo de API e performance no ReactJS" da trilha de ReactJS do curso Ignite da Rocketseat. O objetivo principal era desenvolver uma aplicação completa, integrando conceitos fundamentais do ecossistema React abordados durante o módulo, tais como ContextAPI, useState, useEffect, styled-components, entre outros.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 🚀 Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- Reactjs
+- Vite
+- Typescript
+- ContextApi
+- Styled Components
+
+## Demo
+
+<a href="https://github-blog-lemartins07.vercel.app/" target="_blank">Clique aqui</a> para ver a demo do projeto.
+
+## 📝 Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+
+---
