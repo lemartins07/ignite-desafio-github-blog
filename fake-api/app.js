@@ -449,7 +449,17 @@ app.get('/user', (req, res) => {
 })
 
 app.get('/posts', (req, res) => {
-  res.json(postData)
+  const search = req.query.search
+
+  console.log(search)
+
+  const filteredPosts = search
+    ? postData.filter(
+        (post) => post.title.includes(search) || post.body.includes(search),
+      )
+    : postData
+
+  res.json(filteredPosts)
 })
 
 app.get('/posts/:number', (req, res) => {

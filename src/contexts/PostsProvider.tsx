@@ -47,9 +47,9 @@ export function PostsProvider({ children }: PostsProviderProps) {
           q: `${query}repo:${GITHUB_USER}/${GITHUB_REPO}`,
         },
       }) */
-      console.log(query)
+      console.log('query: ', query)
 
-      const response = await api.get('posts')
+      const response = await api.get(`posts${query && '?search=' + query}`)
 
       const data = response.data
 
