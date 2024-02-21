@@ -31,8 +31,8 @@ interface PostsContextType {
   fetchPosts: (query?: string) => Promise<void>
 }
 
-const GITHUB_REPO = 'ignite-desafio-github-blog'
-const GITHUB_USER = 'lemartins07'
+/* const GITHUB_REPO = 'ignite-desafio-github-blog'
+const GITHUB_USER = 'lemartins07' */
 
 export const PostsContext = createContext({} as PostsContextType)
 
@@ -42,13 +42,18 @@ export function PostsProvider({ children }: PostsProviderProps) {
 
   const fetchPosts = useCallback(async (query = '') => {
     try {
-      const response = await api.get('search/issues', {
+      /* const response = await api.get('search/issues', {
         params: {
           q: `${query}repo:${GITHUB_USER}/${GITHUB_REPO}`,
         },
-      })
+      }) */
+      console.log(query)
 
-      const data = response.data.items
+      const response = await api.get('posts')
+
+      const data = response.data
+
+      console.log(data)
 
       setPosts(data)
     } catch (e) {
@@ -60,9 +65,11 @@ export function PostsProvider({ children }: PostsProviderProps) {
     try {
       // https://api.github.com/repos/rocketseat-education/reactjs-github-blog-challenge/issues/1
 
-      const response = await api.get(
-        `repos/${GITHUB_USER}/${GITHUB_REPO}/issues/${postNumber}`,
-      )
+      /*  const response = await api.get(
+        ` repos/${GITHUB_USER}/${GITHUB_REPO}/issues/${postNumber}`,
+      ) */
+
+      const response = await api.get(`posts/${postNumber}`)
 
       const data = response.data
       setPost(data)

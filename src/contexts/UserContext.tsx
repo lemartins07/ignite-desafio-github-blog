@@ -31,7 +31,11 @@ export function UserProvider({ children }: UserProviverProps) {
   const [user, setUser] = useState<User>({} as User)
 
   const fetchUser = useCallback(async () => {
-    const response = await api.get('users/lemartins07')
+    // produção
+    // const response = await api.get('users/lemartins07')
+
+    // dev
+    const response = await api.get('user')
     const data = response.data
 
     setUser(data)
