@@ -32,10 +32,11 @@ export function UserProvider({ children }: UserProviverProps) {
 
   const fetchUser = useCallback(async () => {
     // produção
-    // const response = await api.get('users/lemartins07')
+    const response = await api.get('users/lemartins07')
 
     // dev
-    const response = await api.get('user')
+    // const response = await api.get('user')
+
     const data = response.data
 
     setUser(data)

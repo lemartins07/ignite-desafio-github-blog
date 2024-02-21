@@ -29,11 +29,9 @@ export function Link({
         </LinkAnchor>
       ) : (
         <RouterLink to={url}>
-          <LinkAnchor>
-            {icon === 'back' && <FaChevronLeft />}
-            {children}
-            {icon === 'external' && <FaArrowUpRightFromSquare />}
-          </LinkAnchor>
+          {icon === 'back' && <FaChevronLeft />}
+          {children}
+          {icon === 'external' && <FaArrowUpRightFromSquare />}
         </RouterLink>
       )}
     </LinkContainer>

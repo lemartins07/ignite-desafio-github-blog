@@ -5,7 +5,7 @@ import { PostsContext } from '../../contexts/PostsProvider'
 
 export function SearchBar() {
   const [search, setSearch] = useState<string>('')
-  const { fetchPosts } = useContext(PostsContext)
+  const { posts, fetchPosts } = useContext(PostsContext)
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     setSearch(() => e.target.value)
@@ -16,7 +16,10 @@ export function SearchBar() {
     <SearchBarContainer>
       <div>
         <span>Publicações</span>
-        <span>06 publicações</span>
+        <span>
+          {posts && posts.length > 10 ? posts.length : '0' + posts.length}
+          {posts && posts.length > 1 ? ' publicações' : ' publicação'}
+        </span>
       </div>
       <Input
         type="text"
