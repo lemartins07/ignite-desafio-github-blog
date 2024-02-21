@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const CardContainer = styled.div`
-  max-width: 460px;
   max-height: 260px;
   padding: 2rem;
   background-color: ${(props) => props.theme['base-post']};
@@ -14,11 +13,10 @@ export const CardContainer = styled.div`
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 1.25rem;
-  }
-
-  strong {
-    color: ${(props) => props.theme['base-title']};
-    font-size: ${(props) => props.theme['font-l']};
+    strong {
+      color: ${(props) => props.theme['base-title']};
+      font-size: ${(props) => props.theme['font-l']};
+    }
   }
 
   span {

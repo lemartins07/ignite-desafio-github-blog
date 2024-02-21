@@ -7,7 +7,6 @@ import { CodeProps } from 'react-markdown/lib/ast-to-react'
 export function useMarkdownParser(body: string) {
   return (
     <ReactMarkdown
-      className="[&>p]:pb-6 [&>p>a]:block [&>p>a]:pb-1 [&>p>a]:text-blue [&>p>a]:underline "
       remarkPlugins={[remarkGfm]}
       components={{
         code: markdownParserCodeHighlighter,

@@ -12,7 +12,11 @@ export function PostList() {
       {posts &&
         posts.map((post) => (
           <Link key={post.number} to={`post/${post.number}`}>
-            <Card title={post.title} content={post.body} />
+            <Card
+              title={post.title}
+              content={post.body}
+              createdAt={post.created_at}
+            />
           </Link>
         ))}
     </PostListContainer>

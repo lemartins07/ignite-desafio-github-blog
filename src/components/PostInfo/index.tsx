@@ -1,6 +1,8 @@
 import { FaCalendarDay, FaComment, FaGithub } from 'react-icons/fa'
 import { Link } from '../Link'
 import { PostInfoContainer } from './styles'
+import { formatDistance } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
 
 interface Post {
   number: string
@@ -38,7 +40,10 @@ export function PostInfo({ data }: PostInfoProps) {
             </li>
             <li>
               <FaCalendarDay />
-              Há {data.created_at} dia
+              Há{' '}
+              {formatDistance(new Date(), data.created_at, {
+                locale: ptBR,
+              })}{' '}
             </li>
             <li>
               <FaComment />
